@@ -1,13 +1,9 @@
 * {
     text-align: center;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 header {
     background-color: red;
     color: white;
-}
-
-li { 
-    text-decoration: none;
 }

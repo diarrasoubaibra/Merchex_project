@@ -1,0 +1,13 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <h1>Liste des annonces</h1>
+    <p>bienvenue sur la page d'annonce de merch !</p>
+    <ul>
+        {%for listing in listings %}
+        <li>
+            <a href="{% url 'listing-detail' listing.id %}">{{listing.title|upper}}</a>
+        </li>
+        {%endfor%}
+    </ul>
+{% endblock %}
