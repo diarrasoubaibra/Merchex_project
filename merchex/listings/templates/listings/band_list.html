@@ -3,10 +3,11 @@
 {% block content %}
 
     <h1>GROUPES</h1>
+    <a href="{% url 'band-create' %}">Créer un nouveau groupe</a> 
     <ul>
         {% for band in bands %}
             <li>
-               <a href="{% url 'band-detail' band.id %}">{{ band.name|upper }}</a> 
+               <a href="{% url 'band-detail' band.id %}">{{ band.name|upper }}</a>
             </li>
         {% endfor %}
     </ul>

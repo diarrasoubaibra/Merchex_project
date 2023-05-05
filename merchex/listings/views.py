@@ -4,6 +4,8 @@ from django.shortcuts import render
 from listings.forms import ContactUsForm
 from django.core.mail import send_mail
 from django.shortcuts import redirect
+from listings.forms import ContactUsForm, BandForm
+from django.urls import reverse
 
 
 def band_list(request):
@@ -18,6 +20,20 @@ def band_detail(request, band_id):
     return render(request,
                   'listings/band_detail.html',
                   {'band': band})
+
+def band_create(request):
+    if request.method == 'POST':
+        form = BandForm(request.POST)
+        if form.is_valid():
+            band = form.save()
+            return redirect('band-detail', band.id)
+    
+    else:
+        form = BandForm()
+
+    return render (request,
+        'listings/band_create.html',
+        {'form': form})
 
 
 def listing_list(request):
