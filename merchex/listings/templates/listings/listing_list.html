@@ -3,10 +3,12 @@
 {% block content %}
     <h1>Liste des annonces</h1>
     <p>bienvenue sur la page d'annonce de merch !</p>
+    <a href="{% url 'listing-create' %}">Ajoutez une nouvelle annonce</a>
     <ul>
         {%for listing in listings %}
         <li>
             <a href="{% url 'listing-detail' listing.id %}">{{listing.title|upper}}</a>
+            - <a href="{% url 'listing_update' listing.id %}">[modifier]</a>
         </li>
         {%endfor%}
     </ul>

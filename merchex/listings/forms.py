@@ -11,3 +11,8 @@ class BandForm(forms.ModelForm):
     class Meta:
         model = Band
         fields = '__all__'
+
+class ListingForm(forms.ModelForm):
+    class Meta:
+        model = Listing
+        fields = '__all__'
